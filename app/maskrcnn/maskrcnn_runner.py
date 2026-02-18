@@ -113,11 +113,9 @@ class MaskRCNNRunner(ONNXRunner):
 
         images = []
         images.append(image)
-        meta = self.session.get_modelmeta()
-        print(meta.custom_metadata_map)
 
         input_meta = self.session.get_inputs()[0]  # the first input tensor
-        print(input_meta.shape[2])
+        # print(input_meta.shape[2])
         self.input_size = (input_meta.shape[2] or 640, input_meta.shape[3] or 640)
 
         input_tensor, params = preprocess(image, self.input_size)  # shared preprocessing

@@ -265,8 +265,6 @@ class Widget(QWidget):
         # Draw boxes only if detections exist
         if detections:
             for det in detections:
-                print(det.bbox)
-                print(f"Class_{det.id}: {det.conf:.2f}")
                 x0, y0, x1, y1 = map(int, det.bbox)
                 color = tuple(np.random.randint(0, 256, size=3).tolist())
 

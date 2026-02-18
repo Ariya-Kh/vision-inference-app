@@ -90,7 +90,6 @@ class RFDETRRunner(ONNXRunner):
         boxes[:, 1] = np.clip(boxes[:, 1], 0, height)
         boxes[:, 2] = np.clip(boxes[:, 2], 0, width)
         boxes[:, 3] = np.clip(boxes[:, 3], 0, height)
-        print(boxes)
         x0 = x - 0.5 * w;
         y0 = y - 0.5 * h;
         x1 = x + 0.5 * w;
@@ -109,7 +108,6 @@ class RFDETRRunner(ONNXRunner):
         bboxes = boxes.tolist()
         classes = classes.astype(int).tolist()
         confs = confs.tolist()
-        print("confs: ", confs)
         final_boxes = bboxes
         final_classes = classes
         final_confs = confs
@@ -177,10 +175,8 @@ class RFDETRRunner(ONNXRunner):
         images = []
         images.append(image)
         meta = self.session.get_modelmeta()
-        print(meta.custom_metadata_map)
 
         input_meta = self.session.get_inputs()[0]  # the first input tensor
-        print(input_meta.shape[2])
         self.input_size = (input_meta.shape[2] or 384, input_meta.shape[3] or 384)
 
         input_tensor, params = self.preprocess(image)  # shared preprocessing
