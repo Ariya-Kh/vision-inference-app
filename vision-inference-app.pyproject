@@ -1,0 +1,16 @@
+{
+    "files": [
+        "widget.py",
+        "app/gui/form.ui",
+        "app/gui/ui_form.py",
+        "main.py",
+        "app/inference/base_runner.py",
+        "app/inference/onnx_runner.py",
+        "app/yolo/yolov8_runner.py",
+        "app/yolo/utils.py",
+        "app/yolo/yolo26_runner.py",
+        "app/rfdetr/rfdetr_runner.py",
+        "app/inference/utils.py",
+        "app/maskrcnn/maskrcnn_runner.py"
+    ]
+}
